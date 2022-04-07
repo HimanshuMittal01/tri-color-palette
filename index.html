@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Color Palette Generator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h2 class="main-title">Tri-color Palette Generator</h2>
+            <p class="about-text">
+                It is tri-color palette generator.
+            </p>
+        </header>
+        <section class="controls">
+            <label for="start-hue">Hue:</label>
+            <input type="number" name="start-hue" id="start-hue" min="0" max="360" value="350">
+            <label for="start-saturation">Saturation:</label>
+            <input type="number" name="start-saturation" id="start-saturation" min="0" max="100" value="60">
+            <label for="start-lightness">Lightness:</label>
+            <input type="number" name="start-lightness" id="start-lightness" min="0" max="100" value="10">
+            <label for="saturation-diff">Saturation difference:</label>
+            <input type="number" name="saturation-diff" id="saturation-diff" min="0" max="100" value="20">
+            <label for="lightness-diff">Lightness difference:</label>
+            <input type="number" name="lightness-diff" id="lightness-diff" min="0" max="100" value="20">
+        </section>
+        <section class="color-palettes">
+            <div class="palette">
+                <div class="box" data-id="box-1">#290a0f</div>
+                <div class="box" data-id="box-2">#8cd9a6</div>
+                <div class="box" data-id="box-3">#269dd9</div>
+                <div class="box" data-id="box-4">#dbf0ec</div>
+                <div class="box" data-id="box-5">#732659</div>
+                <div class="box" data-id="box-6">#a67359</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
