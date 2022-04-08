@@ -3,7 +3,7 @@ const startSaturation = document.getElementById('start-saturation');
 const startLightness = document.getElementById('start-lightness');
 const saturationDiff = document.getElementById('saturation-diff');
 const lightnessDiff = document.getElementById('lightness-diff');
-const controls = document.querySelectorAll('.controls > input');
+const controls = document.querySelectorAll('.controls-cont > input');
 
 function getInputValue(numField) {
     let maxVal = parseInt(numField.max);
@@ -53,30 +53,40 @@ function generatePalette() {
     arr[0]['s'] = getInputValue(startSaturation);
     arr[0]['l'] = getInputValue(startLightness);
 
+    let ss1 = arr[0]['s'];
+    // if (ss1<30 || ss1>70) {
+    //     ss1 = 50;
+    // }
+
     // color-2
     arr[1]['h'] = (arr[0]['h'] + 150)%360;
-    arr[1]['s'] = Math.max(0, arr[0]['s'] - sd/2);
+    arr[1]['s'] = Math.max(0, ss1 - sd/2);
     arr[1]['l'] = Math.min(100, Math.max(0, arr[0]['l'] +(arr[0]['l']<=50 ? 50 : -50) + ld/2));
 
     // color-3
     arr[2]['h'] = (arr[0]['h'] + 210)%360;
-    arr[2]['s'] = Math.min(100, arr[0]['s'] + sd/2);
+    arr[2]['s'] = Math.min(100, ss1 + sd/2);
     arr[2]['l'] = Math.min(100, Math.max(0, arr[0]['l'] +(arr[0]['l']<=50 ? 50 : -50) - ld/2));
 
     // color-4
     arr[3]['h'] = (arr[0]['h'] + 180)%360;
-    arr[3]['s'] = 100 - arr[0]['s'];
+    arr[3]['s'] = arr[0]['s'];
     arr[3]['l'] = 100 - arr[0]['l'];
 
+    let ss2 = arr[3]['s'];
+    // if (ss2<30 || ss2>70) {
+    //     ss2 = 50;
+    // }
+
     // color-5
-    arr[4]['h'] = (arr[3]['h'] + 150)%360;
-    arr[4]['s'] = Math.min(100, arr[3]['s'] + sd/2);
-    arr[4]['l'] = Math.min(100, Math.max(0, arr[3]['l'] +(arr[3]['l']<=50 ? 50 : -50) - ld/2));
+    arr[4]['h'] = (arr[3]['h'] + 210)%360;
+    arr[4]['s'] = Math.max(0, ss2 - sd/2);
+    arr[4]['l'] = Math.min(100, Math.max(0, arr[3]['l'] +(arr[3]['l']<=50 ? 50 : -50) + ld/2));
 
     // color-6
-    arr[5]['h'] = (arr[3]['h'] + 210)%360;
-    arr[5]['s'] = Math.max(0, arr[3]['s'] - sd/2);
-    arr[5]['l'] = Math.min(100, Math.max(0, arr[3]['l'] +(arr[3]['l']<=50 ? 50 : -50) + ld/2));
+    arr[5]['h'] = (arr[3]['h'] + 150)%360;
+    arr[5]['s'] = Math.min(100, ss2 + sd/2);
+    arr[5]['l'] = Math.min(100, Math.max(0, arr[3]['l'] +(arr[3]['l']<=50 ? 50 : -50) - ld/2));
 
     // assign colors to boxes
     for (let i=0; i<6; i++) {

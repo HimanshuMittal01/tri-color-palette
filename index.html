@@ -6,26 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri-Color Palette Generator</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-content">
         <header>
             <h2 class="main-title">Tri-color Palette Generator</h2>
             <p class="about-text">
-                It is tri-color palette generator.
+                This tool generates three colour palette where one colour is base color, and other two are complementary colors separated by 60` angle on the color wheel. 
+                Last three colors are corresponding complementary colors.<br>
+                Use this palette as a way to find good color combination, then use <a href="https://coolors.co/">this</a> amazing tool to choose shades and add little randomness 
+                to make it your perfect web color palette.
             </p>
         </header>
         <section class="controls">
-            <label for="start-hue">Hue:</label>
-            <input type="number" name="start-hue" id="start-hue" min="0" max="360" value="350">
-            <label for="start-saturation">Saturation:</label>
-            <input type="number" name="start-saturation" id="start-saturation" min="0" max="100" value="60">
-            <label for="start-lightness">Lightness:</label>
-            <input type="number" name="start-lightness" id="start-lightness" min="0" max="100" value="10">
-            <label for="saturation-diff">Saturation difference:</label>
-            <input type="number" name="saturation-diff" id="saturation-diff" min="0" max="100" value="20">
-            <label for="lightness-diff">Lightness difference:</label>
-            <input type="number" name="lightness-diff" id="lightness-diff" min="0" max="100" value="20">
+            <div class="controls-cont">
+                <label for="start-hue">Hue:</label>
+                <input type="number" name="start-hue" id="start-hue" min="0" max="360" value="350">
+                <label for="start-saturation">Saturation:</label>
+                <input type="number" name="start-saturation" id="start-saturation" min="0" max="100" value="60">
+                <label for="start-lightness">Lightness:</label>
+                <input type="number" name="start-lightness" id="start-lightness" min="0" max="100" value="10">
+                <label for="saturation-diff">Saturation difference:</label>
+                <input type="number" name="saturation-diff" id="saturation-diff" min="0" max="100" value="20">
+                <label for="lightness-diff">Lightness difference:</label>
+                <input type="number" name="lightness-diff" id="lightness-diff" min="0" max="100" value="20">
+            </div>
         </section>
         <section class="color-palettes">
             <div class="palette">
@@ -37,6 +46,9 @@
                 <div class="box" data-id="box-6">#a67359</div>
             </div>
         </section>
+    </div>
+    <div class="created-by">
+        Made with <i class="fa-solid fa-heart"></i> by <a href="https://www.linkedin.com/in/himanshumittal13/">Himanshu Mittal</a>
     </div>
 
     <script src="app.js"></script>
